@@ -28,8 +28,8 @@ This project uses only the Python 3 standard library, so **no external packages 
 
 1.  **Clone the Repository:**
     ```bash
-    git clone <your-github-repo-url>
-    cd <your-repo-name>
+    git clone https://github.com/lin011004/FLAM-Backend-Assignment
+    cd FLAM-Backend-Assignment
     ```
 
 2.  **Prerequisite:** Ensure you have **Python 3** installed and accessible in your command line.
