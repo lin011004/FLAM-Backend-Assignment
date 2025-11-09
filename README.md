@@ -152,4 +152,4 @@ To verify all functionality is working:
 
 ## 5. 🎬 CLI Demo
 
-[**<< INSERT YOUR DEMO VIDEO LINK HERE >>**](https://www.example.com)
+[**https://drive.google.com/file/d/19-nUhHJGYjC2M7RlAUx5GAdn96qG_ALt/view?usp=sharing**]
