@@ -1,0 +1,36 @@
+:: --------------------------------------------------
+:: queuectl - All Commands (for cmd.exe)
+:: --------------------------------------------------
+
+:: 1. ENQUEUE JOBS
+
+:: Enqueue a job that will succeed
+py queuectl.py enqueue "{\"id\": \"success_job\", \"command\": \"echo Hello world\"}"
+
+:: Enqueue a job that will fail (to test retries and DLQ)
+py queuectl.py enqueue "{\"id\": \"fail_retry\", \"command\": \"false\"}"
+
+:: Enqueue a job that succeeds after a 2-second delay
+:: Note: Escapes ^&^& for the '&&' command in cmd.exe
+py queuectl.py enqueue "{\"id\": \"delayed_job\", \"command\": \"timeout /t 2 /nobreak > NUL ^&^& echo Done\"}"
+
+
+:: 2. CHECK STATUS
+
+:: Get a summary of all job states
+python queuectl.py status
+
+
+:: 3. START WORKERS
+
+:: Start 3 parallel workers (this will take over the terminal)
+python queuectl.py worker start --count 3
+
+
+:: 4. MANAGE DEAD LETTER QUEUE (DLQ)
+
+:: List all jobs that have permanently failed
+python queuectl.py dlq list
+
+:: Retry a specific failed job from the DLQ
+python queuectl.py dlq retry fail_retry
